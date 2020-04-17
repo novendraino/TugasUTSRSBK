@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:mcv="http://myfaces.apache.org/commons/validators"
+>
+   <h:head>
+        <title>Form Survei Mahasiswa</title>
+        <link href="./css/style.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+    <div align="center">
+        <h1 class="title">Form Survei Mahasiswa</h1> 
+        <h3>Data Diri</h3> 
+        <fieldset>
+        <legend>Silahkan isi form dibawah!</legend>
+        <h:form>
+        <h:panelGrid columns="3" styleClass="formTable">
+            <h:outputLabel for="namaDpn" value="Nama Depan : " />
+            <h:inputText id="namaDpn" value="#{helloWorld.namaDpn}" required = "true" requiredMessage="Required" />
+            <br></br>
+            <h:outputLabel for="namaBlkg" value="Nama Belakang : " />
+            <h:inputText id="namaBlkg" value="#{helloWorld.namaBlkg}" required = "true" />
+			<br></br>
+			<h:outputLabel for="alamatJln" value="Alamat : " />
+            <h:inputText id="alamatJln" value="#{helloWorld.alamatJln}" required = "true" />
+            <br></br>
+            <h:outputLabel for="namaKota" value="Kota : " />
+            <h:inputText id="namaKota" value="#{helloWorld.namaKota}" required = "true" />
+            <br></br>
+            <h:outputLabel for="negaraBagian" value="Negara Bagian : " />
+            <h:inputText id="negaraBagian" value="#{helloWorld.negaraBagian}" required = "true" />
+            <br></br>
+            <h:outputLabel for="kodePos" value="Kode Pos : " />
+            <h:inputText id="kodePos" value="#{helloWorld.kodePos}" required = "true" />
+            <br></br>
+            <h:outputLabel for="noTelp" value="No. Telp : " />
+            <h:inputText id="noTelp" value="#{helloWorld.noTelp}" required = "true" />
+            <br></br>
+            <h:outputLabel for="eMail" value="Email : " />
+            <h:inputText id="eMail" value="#{helloWorld.eMail}" required = "true" >
+            	<mcv:validateEmail/>
+            </h:inputText>
+            <br></br>
+            <h:outputLabel for="tglSurvei" value="Tgl Survei : " />
+            <h:inputText id="tglSurvei" value="#{helloWorld.tglSurvei}"
+            	required = "true">
+            	<f:convertDateTime pattern="MM/dd/yyyy"/>
+            </h:inputText>
+            <br></br>
+            
+            <h:outputLabel value="Apa yang anda sukai dari UNDIP?" />
+            <h:selectManyCheckbox value="#{helloWorld.favNumber1}">
+	         <f:selectItem itemValue="Siswa" itemLabel="Siswa" />
+	         <f:selectItem itemValue="Lokasi" itemLabel="Lokasi" />
+	         <f:selectItem itemValue="Kampus" itemLabel="Kampus" />
+	         <f:selectItem itemValue="Suasana" itemLabel="Suasana" />
+	         <f:selectItem itemValue="Kamar Asrama" itemLabel="Kamar Asrama" />
+	         <f:selectItem itemValue="Olahraga" itemLabel="Olahraga" />
+	        </h:selectManyCheckbox>
+            
+            <br></br>
+            <h:outputLabel for="attractAsk" value="Bagaimana anda tertarik dengan UNDIP?" /> 
+            <h:selectOneRadio id = "attractAsk" value="#{helloWorld.attractAsk}">
+			   	<f:selectItem itemValue="Televisi" itemLabel="Televisi" />
+			   	<f:selectItem itemValue="Teman" itemLabel="Teman" />
+			   	<f:selectItem itemValue="Internet" itemLabel="Internet" />
+			   	<f:selectItem itemValue="Lainnya" itemLabel="Lainnya" />
+			</h:selectOneRadio>
+            <br></br>
+            
+            <h:outputLabel for="dropAsk" value="Seberapa mungkinkah anda merekomendasikan UNDIP?" /> 
+            
+            <h:selectOneMenu id = "dropAsk" value="#{helloWorld.dropAsk}">
+			   	<f:selectItem itemValue="Sangat Mungkin" itemLabel="Sangat Mungkin" />
+			   	<f:selectItem itemValue="Mungkin" itemLabel="Mungkin" />
+			   	<f:selectItem itemValue="Tidak Mungkin" itemLabel="Tidak Mungkin" />
+			</h:selectOneMenu>
+            
+            <br></br>
+            <h:outputLabel for="komentar" value="Saran/Masukan" />
+            
+            <h:inputTextarea id="komentar" value="#{helloWorld.komentar}" />
+            <br></br>
+            <br></br>
+			<h:button value="Cancel" outcome="hello" />
+ 
+        	<h:button value="Submit" outcome="sukses" />
+        </h:panelGrid>
+        </h:form>
+        </fieldset>
+        <h:outputText id="output" value="#{helloWorld.output}" />
+        <br></br>
+        <h:outputText id="output2" value="#{helloWorld.output2}" />
+        <br></br>
+        <h:outputText id="visited_hasil_NULL" value="#{helloWorld.favNumber1InString}" />
+        <br></br>
+        <h:outputText id="output3" value="#{helloWorld.output3}" />
+        <br></br>
+        
+        <h:outputText id="respon_sukses" value="#{helloWorld.respon_sukses}" /> 
+        
+    </div>
+    </h:body>
+</html>
