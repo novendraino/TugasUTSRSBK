@@ -14,4 +14,4 @@ Anggota Kelompok :
 http://homepagersbkuts.s3-website-us-east-1.amazonaws.com/
 
 # URL EC2 Instance/Application
-http://3.92.178.219:8080/validation-2-heidyn/hello.jsf
+http://3.92.178.219:8080/project-uts/hello.jsf
