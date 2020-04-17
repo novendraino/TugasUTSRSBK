@@ -1,4 +1,6 @@
 # Tugas - UTS - RSBK
+Source code terbaru ada pada folder validation-2-uts dan file project-uts.war
+
 Anggota Kelompok :
 1. Heidy Novendra - 21120117130035
 2. Gagah Pristiyaputra - 21120117130053
